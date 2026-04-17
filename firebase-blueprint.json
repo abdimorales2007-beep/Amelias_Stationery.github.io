@@ -1,0 +1,51 @@
+{
+  "entities": {
+    "Product": {
+      "title": "Product",
+      "description": "A stationery product in the catalog.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name", "description", "imageUrl"]
+    },
+    "Settings": {
+      "title": "Settings",
+      "description": "Global shop settings.",
+      "type": "object",
+      "properties": {
+        "googleMapsLink": { "type": "string" },
+        "whatsappNumber": { "type": "string" },
+        "address": { "type": "string" },
+        "email": { "type": "string" },
+        "openingHours": {
+          "type": "object",
+          "properties": {
+            "monday": { "type": "string" },
+            "tuesday": { "type": "string" },
+            "wednesday": { "type": "string" },
+            "thursday": { "type": "string" },
+            "friday": { "type": "string" },
+            "saturday": { "type": "string" },
+            "sunday": { "type": "string" }
+          }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "/products/{productId}": {
+      "schema": "Product",
+      "description": "Collection of products."
+    },
+    "/settings/global": {
+      "schema": "Settings",
+      "description": "Global configuration document."
+    }
+  }
+}

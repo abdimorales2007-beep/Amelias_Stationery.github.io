@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+
+@theme {
+  --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+  
+  --color-terracotta: #B94A3E;
+  --color-brown-dark: #1A1A1A;
+  --color-brown-soft: #8B5E3C;
+  --color-blue-steel: #3E5B76;
+  --color-cream: #FDFBF7;
+  --color-green-vibrant: #00C896;
+  --color-pink-vibrant: #FF6B9D;
+  --color-yellow-soft: #FFF5D1;
+  --color-peach-soft: #FFD6C1;
+}
+
+body {
+  @apply bg-cream text-brown-dark font-sans;
+}
+
+.mesh-gradient {
+  background: 
+    radial-gradient(at 0% 0%, #FFF5D1 0%, transparent 50%),
+    radial-gradient(at 100% 0%, #FFD6C1 0%, transparent 50%),
+    radial-gradient(at 50% 50%, #FF6B9D 0%, transparent 40%),
+    radial-gradient(at 0% 100%, #00C896 0%, transparent 50%),
+    radial-gradient(at 100% 100%, #FFF5D1 0%, transparent 50%);
+  background-color: #FDFBF7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-serif;
+}
+
+.btn-primary {
+  @apply bg-terracotta text-white px-6 py-3 rounded-full font-medium transition-all hover:opacity-90 hover:scale-105 active:scale-95;
+}
+
+.btn-secondary {
+  @apply border-2 border-terracotta text-terracotta px-6 py-3 rounded-full font-medium transition-all hover:bg-terracotta hover:text-white;
+}
+
+.card {
+  @apply bg-white rounded-2xl shadow-sm border border-brown-dark/5 overflow-hidden transition-all hover:shadow-md;
+}
+
+.input-field {
+  @apply w-full px-4 py-2 rounded-xl border border-brown-dark/20 focus:outline-none focus:border-terracotta bg-white;
+}
